@@ -1,0 +1,7 @@
+included:
+excluded:
+    - Pods
+disabled_rules:
+    - comma
+    - line_length
+

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		9E5FD64026020E5C008EB927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E5FD63F26020E5C008EB927 /* Assets.xcassets */; };
 		9E5FD64326020E5C008EB927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5FD64126020E5C008EB927 /* LaunchScreen.storyboard */; };
 		9E5FD65126020F49008EB927 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD65026020F49008EB927 /* UILabel+Extension.swift */; };
+		D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48F037E26021AD30047C172 /* .swiftlint.yml */; };
 		D71348CA6E7FE49309787567 /* Pods_GitToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		9E5FD64226020E5C008EB927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E5FD64426020E5C008EB927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E5FD65026020F49008EB927 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		D48F037E26021AD30047C172 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,6 +49,7 @@
 		9E5FD62A26020E59008EB927 = {
 			isa = PBXGroup;
 			children = (
+				D48F037E26021AD30047C172 /* .swiftlint.yml */,
 				9E5FD63526020E59008EB927 /* GitToDoList */,
 				9E5FD63426020E59008EB927 /* Products */,
 				E270A4B37A8CFA2B64E1AB8D /* Pods */,
@@ -131,7 +134,6 @@
 				85A9A8C6DAA07AB9307FF56F /* Pods-GitToDoList.debug.xcconfig */,
 				588B853A4FFF38F6241E17FC /* Pods-GitToDoList.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -147,6 +149,7 @@
 				9E5FD63026020E59008EB927 /* Frameworks */,
 				9E5FD63126020E59008EB927 /* Resources */,
 				DCB2D4F812AFE2C227926B28 /* [CP] Embed Pods Frameworks */,
+				D48F037C26021A7A0047C172 /* swiftlint */,
 			);
 			buildRules = (
 			);
@@ -194,6 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */,
 				9E5FD64326020E5C008EB927 /* LaunchScreen.storyboard in Resources */,
 				9E5FD64026020E5C008EB927 /* Assets.xcassets in Resources */,
 				9E5FD63E26020E59008EB927 /* Main.storyboard in Resources */,
@@ -203,6 +207,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		D48F037C26021A7A0047C172 /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		D9647B2E2566B63AC0746804 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,7 +423,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WFRFQ5S6AR;
+				DEVELOPMENT_TEAM = TZVHD77BLL;
 				INFOPLIST_FILE = GitToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -421,7 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WFRFQ5S6AR;
+				DEVELOPMENT_TEAM = TZVHD77BLL;
 				INFOPLIST_FILE = GitToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
