@@ -11,14 +11,14 @@ import RxCocoa
 import RxSwift
 
 struct GitHubAPIManager {
-    
+    // MARK: - Variables
     static let shared = GitHubAPIManager()
-    
-    private let provider = MoyaProvider<GitHubAPIService>()
-    
+    let disposeBag = DisposeBag()
+    let provider = MoyaProvider<GitHubAPIService>()
+    // MARK: - Init
     init() {}
-    
-    func getCode(){
+    // MARK: - github authorization code get API
+    func getCode() {
         let scope = "repo user"
         let urlString = "https://github.com/login/oauth/authorize"
         var components = URLComponents(string: urlString)!
@@ -26,24 +26,18 @@ struct GitHubAPIManager {
             URLQueryItem(name: "client_id", value: GitHubClientManager.clientID),
             URLQueryItem(name: "scope", value: scope)
         ]
-        
         print("url = \(components.url!.absoluteString)")
-        if let url = URL(string: components.url!.absoluteString), UIApplication.shared.canOpenURL(url)  {
-            print("hi")
+        if let url = URL(string: components.url!.absoluteString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
             // redirect to scene(_:openURLContexts:) if user authorized
         }
     }
-    
-    func login(with code: String) -> Single<AccessToken> {
-        print("code from manage: \(code)")
+    // MARK: - github access token get API
+    func login(with code: String) -> Observable<AccessToken> {
         return provider.rx
             .request(.login(code: code))
             .filterSuccessfulStatusAndRedirectCodes() // we tell it to only complete the call if the operation is successful, otherwise it will give us an error
-            .map(AccessToken.self) // we map the response to our Codable objects
-            
+            .map(AccessToken.self)
+            .asObservable()
     }
-    
 }
-
-

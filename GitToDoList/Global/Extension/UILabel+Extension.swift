@@ -15,7 +15,7 @@ import UIKit
 // 사용법: MyLabel.setLabel(text: "label내용", color: .black, font: UIFont.appleThin(size: 33))
 
 extension UILabel {
-    func setLabel(text: String, color: UIColor, font: UIFont){
+    func setLabel(text: String, color: UIColor, font: UIFont) {
         self.text = text
         self.font = font
         self.textColor = color
