@@ -15,11 +15,27 @@ class LoginViewModel {
     
     let emailTextPublishSubject = PublishSubject<String>()
     let passwordTextPublishSubject = PublishSubject<String>()
+//    let githubapimanager = GitHubAPIManager()
     
     func isValid() -> Observable<Bool> {
         Observable.combineLatest(emailTextPublishSubject.asObservable(), passwordTextPublishSubject.asObservable().startWith("")).map { email, password in
             return email.count > 3 && password.count > 3
         }.startWith(false)
+    }
+    
+    func login(with code: String) -> Completable {
+        print("view model code: \(code)")
+        return .create { observer in
+            GitHubAPIManager().login(with: code).subscribe { (AccessToken) in
+                print("suceeeed, accessToken:")
+                print(AccessToken)
+                observer(.completed)
+            } onError: { (error) in
+                print(error)
+                observer(.error(error))
+            }
+
+        }
     }
 //
 //    private var disposeBag = DisposeBag()

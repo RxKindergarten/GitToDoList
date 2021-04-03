@@ -7,6 +7,7 @@
 
 import Moya
 import RxSwift
+import RxCocoa
 
 enum GitHubAPIService {
     case login(code: String)
@@ -39,8 +40,8 @@ extension GitHubAPIService: TargetType {
         switch self {
         case .login(let code):
             let params: [String: Any] = [
-                "client_id": GitHubAPIManager.clientID,
-                "client_secret": GitHubAPIManager.clientSecret,
+                "client_id": GitHubClientManager.clientID,
+                "client_secret": GitHubClientManager.clientSecret,
                 "code": code
             ]
             return .requestParameters(parameters: params, encoding: URLEncoding.default)

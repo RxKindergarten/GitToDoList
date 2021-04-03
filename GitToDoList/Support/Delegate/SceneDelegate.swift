@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import RxSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-    
+    private let loginViewModel = LoginViewModel()
+
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         self.window?.overrideUserInterfaceStyle = .light
@@ -23,6 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             if url.absoluteString.starts(with: "gittodolist://") {
                 if let code = url.absoluteString.split(separator: "=").last.map({ String($0) }) {
                     print("code:\(code)")
+                    print(loginViewModel.login(with: code))
+                    loginViewModel.login(with: code).asObservable()
 //                    LoginManager.shared.requestAccessToken(with: code)
                 }
             }
