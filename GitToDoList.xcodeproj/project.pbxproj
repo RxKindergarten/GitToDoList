@@ -14,6 +14,19 @@
 		9E5FD64026020E5C008EB927 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E5FD63F26020E5C008EB927 /* Assets.xcassets */; };
 		9E5FD64326020E5C008EB927 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5FD64126020E5C008EB927 /* LaunchScreen.storyboard */; };
 		9E5FD65126020F49008EB927 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD65026020F49008EB927 /* UILabel+Extension.swift */; };
+		9E5FD6762605032C008EB927 /* GitToDoList-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9E5FD6752605032C008EB927 /* GitToDoList-Info.plist */; };
+		9E5FD67B260506A4008EB927 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD67A260506A4008EB927 /* AppInfo.swift */; };
+		9E5FD6802605070E008EB927 /* AppInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD67F2605070E008EB927 /* AppInfoKey.swift */; };
+		9E5FD68426050772008EB927 /* GitHubAccessManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD68326050772008EB927 /* GitHubAccessManager.swift */; };
+		9E5FD68826050D22008EB927 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD68726050D22008EB927 /* LoginVC.swift */; };
+		9E5FD68B26050D3E008EB927 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD68A26050D3E008EB927 /* LoginVM.swift */; };
+		9E5FD68E26050D5E008EB927 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E5FD68D26050D5E008EB927 /* Login.storyboard */; };
+		9E5FD69126051176008EB927 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD69026051176008EB927 /* UIView+Extension.swift */; };
+		9E5FD69C26051325008EB927 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD69B26051325008EB927 /* UIColor+Extension.swift */; };
+		9E5FD6A12605F0D6008EB927 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD6A02605F0D5008EB927 /* ViewModelType.swift */; };
+		9E5FD6A42605F3E1008EB927 /* GitHubLoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD6A32605F3E0008EB927 /* GitHubLoginService.swift */; };
+		9E5FD6A82605FABD008EB927 /* GitToDoListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD6A72605FABC008EB927 /* GitToDoListProvider.swift */; };
+		9E5FD6AE2605FB9D008EB927 /* UserLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD6AD2605FB9D008EB927 /* UserLoginUseCase.swift */; };
 		D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48F037E26021AD30047C172 /* .swiftlint.yml */; };
 		D71348CA6E7FE49309787567 /* Pods_GitToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */; };
 /* End PBXBuildFile section */
@@ -30,6 +43,19 @@
 		9E5FD64226020E5C008EB927 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E5FD64426020E5C008EB927 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E5FD65026020F49008EB927 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		9E5FD6752605032C008EB927 /* GitToDoList-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GitToDoList-Info.plist"; sourceTree = "<group>"; };
+		9E5FD67A260506A4008EB927 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		9E5FD67F2605070E008EB927 /* AppInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoKey.swift; sourceTree = "<group>"; };
+		9E5FD68326050772008EB927 /* GitHubAccessManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAccessManager.swift; sourceTree = "<group>"; };
+		9E5FD68726050D22008EB927 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		9E5FD68A26050D3E008EB927 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		9E5FD68D26050D5E008EB927 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		9E5FD69026051176008EB927 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9E5FD69B26051325008EB927 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		9E5FD6A02605F0D5008EB927 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		9E5FD6A32605F3E0008EB927 /* GitHubLoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubLoginService.swift; sourceTree = "<group>"; };
+		9E5FD6A72605FABC008EB927 /* GitToDoListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitToDoListProvider.swift; sourceTree = "<group>"; };
+		9E5FD6AD2605FB9D008EB927 /* UserLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginUseCase.swift; sourceTree = "<group>"; };
 		D48F037E26021AD30047C172 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,6 +94,10 @@
 		9E5FD63526020E59008EB927 /* GitToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				9E5FD69F2605F0C3008EB927 /* Protocols */,
+				9E5FD67E26050702008EB927 /* Enums */,
+				9E5FD6782605065A008EB927 /* Managers */,
+				9E5FD67426050305008EB927 /* Config */,
 				9E5FD64E26020F29008EB927 /* Global */,
 				9E5FD64C26020ED7008EB927 /* Screen */,
 				9E5FD64B26020EC8008EB927 /* Support */,
@@ -88,6 +118,7 @@
 		9E5FD64C26020ED7008EB927 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				9E5FD68626050D0A008EB927 /* Login */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -107,7 +138,9 @@
 		9E5FD64E26020F29008EB927 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				9E5FD69E26051721008EB927 /* Network */,
 				9E5FD64F26020F2F008EB927 /* Extension */,
+				9E5FD67A260506A4008EB927 /* AppInfo.swift */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -116,8 +149,86 @@
 			isa = PBXGroup;
 			children = (
 				9E5FD65026020F49008EB927 /* UILabel+Extension.swift */,
+				9E5FD69026051176008EB927 /* UIView+Extension.swift */,
+				9E5FD69B26051325008EB927 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9E5FD67426050305008EB927 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD6752605032C008EB927 /* GitToDoList-Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		9E5FD6782605065A008EB927 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD67926050664008EB927 /* GitHubAccessManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9E5FD67926050664008EB927 /* GitHubAccessManager */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD68326050772008EB927 /* GitHubAccessManager.swift */,
+			);
+			path = GitHubAccessManager;
+			sourceTree = "<group>";
+		};
+		9E5FD67E26050702008EB927 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD67F2605070E008EB927 /* AppInfoKey.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		9E5FD68626050D0A008EB927 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD68726050D22008EB927 /* LoginVC.swift */,
+				9E5FD68A26050D3E008EB927 /* LoginVM.swift */,
+				9E5FD68D26050D5E008EB927 /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9E5FD69E26051721008EB927 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD6AB2605FB76008EB927 /* UseCases */,
+				9E5FD6A32605F3E0008EB927 /* GitHubLoginService.swift */,
+				9E5FD6A72605FABC008EB927 /* GitToDoListProvider.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9E5FD69F2605F0C3008EB927 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD6A02605F0D5008EB927 /* ViewModelType.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9E5FD6AB2605FB76008EB927 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD6AC2605FB81008EB927 /* User */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		9E5FD6AC2605FB81008EB927 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD6AD2605FB9D008EB927 /* UserLoginUseCase.swift */,
+			);
+			path = User;
 			sourceTree = "<group>";
 		};
 		ACBB6535695221EBA9E00756 /* Frameworks */ = {
@@ -198,6 +309,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */,
+				9E5FD6762605032C008EB927 /* GitToDoList-Info.plist in Resources */,
+				9E5FD68E26050D5E008EB927 /* Login.storyboard in Resources */,
 				9E5FD64326020E5C008EB927 /* LaunchScreen.storyboard in Resources */,
 				9E5FD64026020E5C008EB927 /* Assets.xcassets in Resources */,
 				9E5FD63E26020E59008EB927 /* Main.storyboard in Resources */,
@@ -272,9 +385,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E5FD65126020F49008EB927 /* UILabel+Extension.swift in Sources */,
+				9E5FD67B260506A4008EB927 /* AppInfo.swift in Sources */,
+				9E5FD68826050D22008EB927 /* LoginVC.swift in Sources */,
+				9E5FD69C26051325008EB927 /* UIColor+Extension.swift in Sources */,
 				9E5FD63B26020E59008EB927 /* ViewController.swift in Sources */,
+				9E5FD6802605070E008EB927 /* AppInfoKey.swift in Sources */,
+				9E5FD68B26050D3E008EB927 /* LoginVM.swift in Sources */,
+				9E5FD68426050772008EB927 /* GitHubAccessManager.swift in Sources */,
+				9E5FD6A12605F0D6008EB927 /* ViewModelType.swift in Sources */,
 				9E5FD63726020E59008EB927 /* AppDelegate.swift in Sources */,
+				9E5FD69126051176008EB927 /* UIView+Extension.swift in Sources */,
+				9E5FD6A42605F3E1008EB927 /* GitHubLoginService.swift in Sources */,
 				9E5FD63926020E59008EB927 /* SceneDelegate.swift in Sources */,
+				9E5FD6AE2605FB9D008EB927 /* UserLoginUseCase.swift in Sources */,
+				9E5FD6A82605FABD008EB927 /* GitToDoListProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +547,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TZVHD77BLL;
+				DEVELOPMENT_TEAM = WFRFQ5S6AR;
 				INFOPLIST_FILE = GitToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -443,7 +567,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TZVHD77BLL;
+				DEVELOPMENT_TEAM = WFRFQ5S6AR;
 				INFOPLIST_FILE = GitToDoList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
