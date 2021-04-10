@@ -10,6 +10,7 @@ import SafariServices
 import Moya
 import RxCocoa
 import RxSwift
+import KeychainSwift
 
 class LoginViewModel {
     let disposeBag = DisposeBag()
@@ -22,7 +23,10 @@ class LoginViewModel {
     }
     func login(with code: String) {
         GitHubAPIManager.shared.login(with: code).subscribe(onNext: { accessToken in
-            print(accessToken.accessToken)
+            print("saving accessToken ...")
+            KeychainSwift().set(accessToken.accessToken, forKey: "accessToken")
+            print("getting accessToken from keychain...")
+            print(KeychainSwift().get("accessToken"))
         }).disposed(by: disposeBag)
     }
 }
