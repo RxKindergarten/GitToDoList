@@ -10,58 +10,40 @@ import RxSwift
 import RxCocoa
 
 class LoginVC: UIViewController {
+    // MARK: - Variables
     private let loginViewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
+    // MARK: - IBOutlet
     @IBOutlet var githubLogoImage: UIImageView!
-    @IBOutlet var emailTextFieldView: UIView!
-    @IBOutlet var emailTextField: UITextField!
-    @IBOutlet var passwordTextFieldView: UIView!
-    @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var loginButton: UIButton!
+    // MARK: - IBAction
     @IBAction func loginButtonDidTap(_ sender: Any) {
         GitHubAPIManager.shared.getCode()
-        print("tapped")
     }
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
-        validCheck()
+        setNotificationCenter()
+    }
+}
+    // MARK: - functions
+extension LoginVC {
+    // MARK: - layout 설정
+    private func layout() {
+        view.backgroundColor = .white
+        githubLogoImage.image = UIImage(named: "githubLogo")
+        loginButton.setRounded(radius: 7)
+        loginButton.backgroundColor = .gray3
+        loginButton.setTitle("Login with Github!", for: .normal)
+        loginButton.tintColor = .black
+    }
+    // MARK: - notification observer 추가
+    private func setNotificationCenter() {
         ApplicationNotificationCenter.tokenHasReceived.addObserver().bind { object in
             guard let code = object as? String else { return }
             print("code: \(code)")
             self.loginViewModel.login(with: code)
         }.disposed(by: self.disposeBag)
-    }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // 뷰 클릭 시 키보드 내리기
-        view.endEditing(true)
-    }
-}
-
-extension LoginVC {
-    private func layout() {
-        view.backgroundColor = .white
-        githubLogoImage.image = UIImage(named: "githubLogo")
-        emailTextFieldView.setBorder(borderColor: .gray3, borderWidth: 1)
-        passwordTextFieldView.setBorder(borderColor: .gray3, borderWidth: 1)
-        emailTextFieldView.backgroundColor = .clear
-        passwordTextFieldView.backgroundColor = .clear
-        emailTextFieldView.setRounded(radius: 7)
-        passwordTextFieldView.setRounded(radius: 7)
-        emailTextField.placeholder = "insert email"
-        passwordTextField.placeholder = "insert password"
-        emailTextField.backgroundColor = .clear
-        passwordTextField.backgroundColor = .clear
-        passwordTextField.isSecureTextEntry = true
-        loginButton.setRounded(radius: 7)
-        loginButton.backgroundColor = .gray3
-        loginButton.setTitle("Login", for: .normal)
-        loginButton.tintColor = .black
-    }
-    private func validCheck() {
-        emailTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.emailTextPublishSubject).disposed(by: disposeBag)
-        passwordTextField.rx.text.map { $0 ?? ""}.bind(to: loginViewModel.passwordTextPublishSubject).disposed(by: disposeBag)
-        loginViewModel.isValid().bind(to: loginButton.rx.isEnabled).disposed(by: disposeBag)
-        loginViewModel.isValid().map { $0 ? 1 : 0.1 }.bind(to: loginButton.rx.alpha).disposed(by: disposeBag)
     }
 }
