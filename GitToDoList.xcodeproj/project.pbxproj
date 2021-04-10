@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E24C9BF26216FFD0097D741 /* NotificationCenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E24C9BE26216FFD0097D741 /* NotificationCenterProtocol.swift */; };
+		9E24C9C2262170E80097D741 /* ApplicationNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E24C9C1262170E80097D741 /* ApplicationNotificationCenter.swift */; };
 		9E5FD63726020E59008EB927 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD63626020E59008EB927 /* AppDelegate.swift */; };
 		9E5FD63926020E59008EB927 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD63826020E59008EB927 /* SceneDelegate.swift */; };
 		9E5FD63B26020E59008EB927 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD63A26020E59008EB927 /* ViewController.swift */; };
@@ -34,6 +36,8 @@
 /* Begin PBXFileReference section */
 		588B853A4FFF38F6241E17FC /* Pods-GitToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToDoList.release.xcconfig"; path = "Target Support Files/Pods-GitToDoList/Pods-GitToDoList.release.xcconfig"; sourceTree = "<group>"; };
 		85A9A8C6DAA07AB9307FF56F /* Pods-GitToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GitToDoList.debug.xcconfig"; path = "Target Support Files/Pods-GitToDoList/Pods-GitToDoList.debug.xcconfig"; sourceTree = "<group>"; };
+		9E24C9BE26216FFD0097D741 /* NotificationCenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterProtocol.swift; sourceTree = "<group>"; };
+		9E24C9C1262170E80097D741 /* ApplicationNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationNotificationCenter.swift; sourceTree = "<group>"; };
 		9E5FD63326020E59008EB927 /* GitToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E5FD63626020E59008EB927 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9E5FD63826020E59008EB927 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5FD67F2605070E008EB927 /* AppInfoKey.swift */,
+				9E24C9C1262170E80097D741 /* ApplicationNotificationCenter.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5FD6A02605F0D5008EB927 /* ViewModelType.swift */,
+				9E24C9BE26216FFD0097D741 /* NotificationCenterProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -381,11 +387,13 @@
 				9E5FD68826050D22008EB927 /* LoginVC.swift in Sources */,
 				9E5FD69C26051325008EB927 /* UIColor+Extension.swift in Sources */,
 				9E5FD63B26020E59008EB927 /* ViewController.swift in Sources */,
+				9E24C9C2262170E80097D741 /* ApplicationNotificationCenter.swift in Sources */,
 				9E5FD6802605070E008EB927 /* AppInfoKey.swift in Sources */,
 				9E5FD68B26050D3E008EB927 /* LoginVM.swift in Sources */,
 				9E5FD68426050772008EB927 /* GitHubClientManager.swift in Sources */,
 				9E5FD6A12605F0D6008EB927 /* ViewModelType.swift in Sources */,
 				9E5FD63726020E59008EB927 /* AppDelegate.swift in Sources */,
+				9E24C9BF26216FFD0097D741 /* NotificationCenterProtocol.swift in Sources */,
 				9E5FD69126051176008EB927 /* UIView+Extension.swift in Sources */,
 				9E5FD6A42605F3E1008EB927 /* GitHubAPIService.swift in Sources */,
 				9E5FD63926020E59008EB927 /* SceneDelegate.swift in Sources */,

@@ -21,11 +21,8 @@ class LoginViewModel {
         }.startWith(false)
     }
     func login(with code: String) {
-        GitHubAPIManager().login(with: code).subscribe { accessToken in
+        GitHubAPIManager.shared.login(with: code).subscribe(onNext: { accessToken in
             print(accessToken.accessToken)
-            // KeyChain 에 access Token 저장하여 다른 API 통신에 활용하면 됨.
-        } onError: { (error) in
-            print(error)
-        }.disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
 }

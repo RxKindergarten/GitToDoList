@@ -34,18 +34,11 @@ struct GitHubAPIManager {
     }
     // MARK: - github access token get API
     func login(with code: String) -> Observable<AccessToken> {
-        provider.rx.request(.login(code: code)).subscribe { event in
-            switch event {
-            case let .success(response):
-                print("succeeed: \(response.data)")
-            case let .error(error):
-                print(error)
-            }
-        }.disposed(by: disposeBag)
         return provider.rx
             .request(.login(code: code))
             .filterSuccessfulStatusAndRedirectCodes() // we tell it to only complete the call if the operation is successful, otherwise it will give us an error
             .map(AccessToken.self)
+            .debug()
             .asObservable()
     }
 }

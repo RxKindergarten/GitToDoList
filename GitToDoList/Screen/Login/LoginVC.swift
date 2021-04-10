@@ -26,6 +26,11 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         layout()
         validCheck()
+        ApplicationNotificationCenter.tokenHasReceived.addObserver().bind { object in
+            guard let code = object as? String else { return }
+            print("code: \(code)")
+            self.loginViewModel.login(with: code)
+        }.disposed(by: self.disposeBag)
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // 뷰 클릭 시 키보드 내리기
