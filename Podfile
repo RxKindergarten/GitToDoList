@@ -8,6 +8,8 @@ target 'GitToDoList' do
   # Pods for GitToDoList
   pod "RxSwift"
   pod "RxCocoa"
-  pod 'Moya', '~> 14.0'
+  pod 'Moya/RxSwift'
   pod 'SwiftLint'
+  pod 'KeychainSwift', '~> 19.0'
+
 end

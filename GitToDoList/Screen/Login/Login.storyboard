@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="se4-OY-YjR">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginVC-->
+        <scene sceneID="gH2-Fz-dca">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="se4-OY-YjR" customClass="LoginVC" customModule="GitToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Exx-g2-L2S">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nfj-t4-Jo5">
+                                <rect key="frame" x="137" y="334" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="gXQ-mk-Boa"/>
+                                    <constraint firstAttribute="width" secondItem="Nfj-t4-Jo5" secondAttribute="height" multiplier="1:1" id="qIr-WV-2b8"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj1-D6-vSp">
+                                <rect key="frame" x="16" y="494" width="382" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ak1-RY-ILx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="loginButtonDidTap:" destination="se4-OY-YjR" eventType="touchUpInside" id="kK2-2d-tOq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TqI-Lg-B90"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TqI-Lg-B90" firstAttribute="trailing" secondItem="Gj1-D6-vSp" secondAttribute="trailing" constant="16" id="Dje-b3-yTU"/>
+                            <constraint firstItem="Gj1-D6-vSp" firstAttribute="leading" secondItem="TqI-Lg-B90" secondAttribute="leading" constant="16" id="cHN-Wk-1CJ"/>
+                            <constraint firstItem="Gj1-D6-vSp" firstAttribute="top" secondItem="Nfj-t4-Jo5" secondAttribute="bottom" constant="20" id="qBr-Wm-dSc"/>
+                            <constraint firstItem="Nfj-t4-Jo5" firstAttribute="centerX" secondItem="TqI-Lg-B90" secondAttribute="centerX" id="xTj-qD-1If"/>
+                            <constraint firstItem="Nfj-t4-Jo5" firstAttribute="top" secondItem="TqI-Lg-B90" secondAttribute="top" constant="290" id="zIE-MH-pe3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="githubLogoImage" destination="Nfj-t4-Jo5" id="a4B-ed-E4n"/>
+                        <outlet property="loginButton" destination="Gj1-D6-vSp" id="2al-cm-QsN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zCj-1V-emB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
