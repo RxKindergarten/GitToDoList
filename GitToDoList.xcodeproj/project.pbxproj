@@ -99,13 +99,14 @@
 			isa = PBXGroup;
 			children = (
 				9E5FD69F2605F0C3008EB927 /* Protocols */,
-				9E5FD67E26050702008EB927 /* Enums */,
+				9E5FD67E26050702008EB927 /* Commons */,
 				9E5FD6782605065A008EB927 /* Managers */,
 				9E5FD67426050305008EB927 /* Config */,
-				9E5FD64E26020F29008EB927 /* Global */,
+				9E7E0FA5261849A50006A9E2 /* Model */,
+				9E5FD69E26051721008EB927 /* Networking */,
+				9E5FD64F26020F2F008EB927 /* Extension */,
 				9E5FD64C26020ED7008EB927 /* Screen */,
 				9E5FD64B26020EC8008EB927 /* Support */,
-				9E5FD64426020E5C008EB927 /* Info.plist */,
 			);
 			path = GitToDoList;
 			sourceTree = "<group>";
@@ -115,6 +116,7 @@
 			children = (
 				9E5FD64D26020F11008EB927 /* Delegate */,
 				9E5FD63F26020E5C008EB927 /* Assets.xcassets */,
+				9E5FD64426020E5C008EB927 /* Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -137,16 +139,6 @@
 				9E5FD64126020E5C008EB927 /* LaunchScreen.storyboard */,
 			);
 			path = Delegate;
-			sourceTree = "<group>";
-		};
-		9E5FD64E26020F29008EB927 /* Global */ = {
-			isa = PBXGroup;
-			children = (
-				9E5FD69E26051721008EB927 /* Network */,
-				9E5FD64F26020F2F008EB927 /* Extension */,
-				9E5FD67A260506A4008EB927 /* AppInfo.swift */,
-			);
-			path = Global;
 			sourceTree = "<group>";
 		};
 		9E5FD64F26020F2F008EB927 /* Extension */ = {
@@ -184,13 +176,13 @@
 			path = GitHubAccessManager;
 			sourceTree = "<group>";
 		};
-		9E5FD67E26050702008EB927 /* Enums */ = {
+		9E5FD67E26050702008EB927 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
-				9E5FD67F2605070E008EB927 /* AppInfoKey.swift */,
+				D499712E262AC681002CDE7F /* AppInfo */,
 				9E24C9C1262170E80097D741 /* ApplicationNotificationCenter.swift */,
 			);
-			path = Enums;
+			path = Commons;
 			sourceTree = "<group>";
 		};
 		9E5FD68626050D0A008EB927 /* Login */ = {
@@ -203,13 +195,12 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		9E5FD69E26051721008EB927 /* Network */ = {
+		9E5FD69E26051721008EB927 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				9E7E0FA5261849A50006A9E2 /* Model */,
 				9E5FD6A32605F3E0008EB927 /* GitHubAPIService.swift */,
 			);
-			path = Network;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		9E5FD69F2605F0C3008EB927 /* Protocols */ = {
@@ -235,6 +226,15 @@
 				F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D499712E262AC681002CDE7F /* AppInfo */ = {
+			isa = PBXGroup;
+			children = (
+				9E5FD67F2605070E008EB927 /* AppInfoKey.swift */,
+				9E5FD67A260506A4008EB927 /* AppInfo.swift */,
+			);
+			path = AppInfo;
 			sourceTree = "<group>";
 		};
 		E270A4B37A8CFA2B64E1AB8D /* Pods */ = {
@@ -547,8 +547,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WFRFQ5S6AR;
-				INFOPLIST_FILE = GitToDoList/Info.plist;
+				DEVELOPMENT_TEAM = TZVHD77BLL;
+				INFOPLIST_FILE = GitToDoList/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -567,8 +567,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WFRFQ5S6AR;
-				INFOPLIST_FILE = GitToDoList/Info.plist;
+				DEVELOPMENT_TEAM = TZVHD77BLL;
+				INFOPLIST_FILE = GitToDoList/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
