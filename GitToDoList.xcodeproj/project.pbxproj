@@ -30,6 +30,8 @@
 		9E7E0FA7261849AF0006A9E2 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7E0FA6261849AF0006A9E2 /* AccessToken.swift */; };
 		9E7E0FB3261856020006A9E2 /* GitHubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7E0FB2261856020006A9E2 /* GitHubAPIManager.swift */; };
 		D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48F037E26021AD30047C172 /* .swiftlint.yml */; };
+		D4997140262AC86B002CDE7F /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D499713F262AC86B002CDE7F /* Tab.storyboard */; };
+		D4997143262AC8AC002CDE7F /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4997142262AC8AC002CDE7F /* TabVC.swift */; };
 		D71348CA6E7FE49309787567 /* Pods_GitToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		9E7E0FA6261849AF0006A9E2 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		9E7E0FB2261856020006A9E2 /* GitHubAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
 		D48F037E26021AD30047C172 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		D499713F262AC86B002CDE7F /* Tab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
+		D4997142262AC8AC002CDE7F /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
 		F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,6 +128,7 @@
 		9E5FD64C26020ED7008EB927 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				D499713E262AC851002CDE7F /* Tab */,
 				9E5FD68626050D0A008EB927 /* Login */,
 			);
 			path = Screen;
@@ -237,6 +242,15 @@
 			path = AppInfo;
 			sourceTree = "<group>";
 		};
+		D499713E262AC851002CDE7F /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				D499713F262AC86B002CDE7F /* Tab.storyboard */,
+				D4997142262AC8AC002CDE7F /* TabVC.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 		E270A4B37A8CFA2B64E1AB8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +322,7 @@
 			files = (
 				D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */,
 				9E5FD6762605032C008EB927 /* GitToDoList-Info.plist in Resources */,
+				D4997140262AC86B002CDE7F /* Tab.storyboard in Resources */,
 				9E5FD68E26050D5E008EB927 /* Login.storyboard in Resources */,
 				9E5FD64326020E5C008EB927 /* LaunchScreen.storyboard in Resources */,
 				9E5FD64026020E5C008EB927 /* Assets.xcassets in Resources */,
@@ -382,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4997143262AC8AC002CDE7F /* TabVC.swift in Sources */,
 				9E5FD65126020F49008EB927 /* UILabel+Extension.swift in Sources */,
 				9E5FD67B260506A4008EB927 /* AppInfo.swift in Sources */,
 				9E5FD68826050D22008EB927 /* LoginVC.swift in Sources */,
