@@ -16,7 +16,7 @@ class LoginVC: UIViewController {
     // MARK: - IBOutlet
     @IBOutlet var githubLogoImage: UIImageView!
     @IBOutlet var loginButton: UIButton!
-    // MARK: - IBAction
+    // MARK: - IBAction // 주혁님의 조언: rxTap 으로 바꿔보자!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     @IBAction func loginButtonDidTap(_ sender: Any) {
         GitHubAPIManager.shared.getCode()
     }
