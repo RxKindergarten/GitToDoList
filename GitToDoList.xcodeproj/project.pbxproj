@@ -32,6 +32,10 @@
 		D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48F037E26021AD30047C172 /* .swiftlint.yml */; };
 		D4997140262AC86B002CDE7F /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D499713F262AC86B002CDE7F /* Tab.storyboard */; };
 		D4997143262AC8AC002CDE7F /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4997142262AC8AC002CDE7F /* TabVC.swift */; };
+		D4997146262ACD49002CDE7F /* IssueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4997145262ACD49002CDE7F /* IssueVC.swift */; };
+		D4997149262ACD52002CDE7F /* Issue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4997148262ACD52002CDE7F /* Issue.storyboard */; };
+		D499714E262ACD62002CDE7F /* Repo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D499714D262ACD62002CDE7F /* Repo.storyboard */; };
+		D4997151262ACD71002CDE7F /* RepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4997150262ACD71002CDE7F /* RepoVC.swift */; };
 		D71348CA6E7FE49309787567 /* Pods_GitToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +69,10 @@
 		D48F037E26021AD30047C172 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D499713F262AC86B002CDE7F /* Tab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
 		D4997142262AC8AC002CDE7F /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
+		D4997145262ACD49002CDE7F /* IssueVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueVC.swift; sourceTree = "<group>"; };
+		D4997148262ACD52002CDE7F /* Issue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Issue.storyboard; sourceTree = "<group>"; };
+		D499714D262ACD62002CDE7F /* Repo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repo.storyboard; sourceTree = "<group>"; };
+		D4997150262ACD71002CDE7F /* RepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoVC.swift; sourceTree = "<group>"; };
 		F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,6 +138,8 @@
 			children = (
 				D499713E262AC851002CDE7F /* Tab */,
 				9E5FD68626050D0A008EB927 /* Login */,
+				D499714B262ACD57002CDE7F /* Issue */,
+				D4997154262ACD75002CDE7F /* Repo */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -251,6 +261,24 @@
 			path = Tab;
 			sourceTree = "<group>";
 		};
+		D499714B262ACD57002CDE7F /* Issue */ = {
+			isa = PBXGroup;
+			children = (
+				D4997148262ACD52002CDE7F /* Issue.storyboard */,
+				D4997145262ACD49002CDE7F /* IssueVC.swift */,
+			);
+			path = Issue;
+			sourceTree = "<group>";
+		};
+		D4997154262ACD75002CDE7F /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				D499714D262ACD62002CDE7F /* Repo.storyboard */,
+				D4997150262ACD71002CDE7F /* RepoVC.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
 		E270A4B37A8CFA2B64E1AB8D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,11 +348,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4997149262ACD52002CDE7F /* Issue.storyboard in Resources */,
 				D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */,
 				9E5FD6762605032C008EB927 /* GitToDoList-Info.plist in Resources */,
 				D4997140262AC86B002CDE7F /* Tab.storyboard in Resources */,
 				9E5FD68E26050D5E008EB927 /* Login.storyboard in Resources */,
 				9E5FD64326020E5C008EB927 /* LaunchScreen.storyboard in Resources */,
+				D499714E262ACD62002CDE7F /* Repo.storyboard in Resources */,
 				9E5FD64026020E5C008EB927 /* Assets.xcassets in Resources */,
 				9E5FD63E26020E59008EB927 /* Main.storyboard in Resources */,
 			);
@@ -415,6 +445,8 @@
 				9E5FD63926020E59008EB927 /* SceneDelegate.swift in Sources */,
 				9E7E0FA7261849AF0006A9E2 /* AccessToken.swift in Sources */,
 				9E7E0FB3261856020006A9E2 /* GitHubAPIManager.swift in Sources */,
+				D4997151262ACD71002CDE7F /* RepoVC.swift in Sources */,
+				D4997146262ACD49002CDE7F /* IssueVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
