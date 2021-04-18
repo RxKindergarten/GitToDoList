@@ -4,4 +4,6 @@ excluded:
 disabled_rules:
     - comma
     - line_length
+    - trailing_whitespace
+    - vertical_whitespace
 

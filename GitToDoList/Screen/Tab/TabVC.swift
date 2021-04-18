@@ -11,8 +11,13 @@ class TabVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         initializeTab()
+        setNotificationCenter()
+    }
+    
+    private func setNotificationCenter() {
+        
     }
     
     private func initializeTab() {
@@ -20,7 +25,6 @@ class TabVC: UITabBarController {
         self.tabBar.barTintColor = .black
         self.tabBar.unselectedItemTintColor = .white
         self.tabBar.tintColor = .white
-        
         guard let issuesVC = UIStoryboard(name: "Issue", bundle: nil)
                 .instantiateViewController(identifier: "IssueVC") as? IssueVC else { return }
         guard let repoVC = UIStoryboard(name: "Repo", bundle: nil)
@@ -28,14 +32,7 @@ class TabVC: UITabBarController {
         self.viewControllers = [issuesVC, repoVC]
         let tabBarItem1 = (self.tabBar.items?[0])! as UITabBarItem
         let tabBarItem2 = (self.tabBar.items?[1])! as UITabBarItem
-        
-        myTabBarItem1.image = UIImage(named:"btnHomeUnselected")
-        myTabBarItem1.selectedImage = UIImage(named: "btnHomeSelected")
-        
-        myTabBarItem2.image = UIImage(named:"btnExploreUnselected")
-        myTabBarItem2.selectedImage = UIImage(named:"btnExploreSelected")
-        
-    
-
+        tabBarItem1.image = UIImage(systemName: "list.dash")
+        tabBarItem2.image = UIImage(systemName: "cube.box")
     }
 }

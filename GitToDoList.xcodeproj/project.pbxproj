@@ -29,6 +29,7 @@
 		9E5FD6A42605F3E1008EB927 /* GitHubAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E5FD6A32605F3E0008EB927 /* GitHubAPIService.swift */; };
 		9E7E0FA7261849AF0006A9E2 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7E0FA6261849AF0006A9E2 /* AccessToken.swift */; };
 		9E7E0FB3261856020006A9E2 /* GitHubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7E0FB2261856020006A9E2 /* GitHubAPIManager.swift */; };
+		D4791C92262BFA1600F0C8EF /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4791C91262BFA1600F0C8EF /* Notification+Extension.swift */; };
 		D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48F037E26021AD30047C172 /* .swiftlint.yml */; };
 		D4997140262AC86B002CDE7F /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D499713F262AC86B002CDE7F /* Tab.storyboard */; };
 		D4997143262AC8AC002CDE7F /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4997142262AC8AC002CDE7F /* TabVC.swift */; };
@@ -66,6 +67,7 @@
 		9E5FD6A32605F3E0008EB927 /* GitHubAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIService.swift; sourceTree = "<group>"; };
 		9E7E0FA6261849AF0006A9E2 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		9E7E0FB2261856020006A9E2 /* GitHubAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
+		D4791C91262BFA1600F0C8EF /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		D48F037E26021AD30047C172 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D499713F262AC86B002CDE7F /* Tab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
 		D4997142262AC8AC002CDE7F /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				9E5FD65026020F49008EB927 /* UILabel+Extension.swift */,
 				9E5FD69026051176008EB927 /* UIView+Extension.swift */,
+				D4791C91262BFA1600F0C8EF /* Notification+Extension.swift */,
 				9E5FD69B26051325008EB927 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
@@ -438,6 +441,7 @@
 				9E5FD68B26050D3E008EB927 /* LoginVM.swift in Sources */,
 				9E5FD68426050772008EB927 /* GitHubClientManager.swift in Sources */,
 				9E5FD6A12605F0D6008EB927 /* ViewModelType.swift in Sources */,
+				D4791C92262BFA1600F0C8EF /* Notification+Extension.swift in Sources */,
 				9E5FD63726020E59008EB927 /* AppDelegate.swift in Sources */,
 				9E24C9BF26216FFD0097D741 /* NotificationCenterProtocol.swift in Sources */,
 				9E5FD69126051176008EB927 /* UIView+Extension.swift in Sources */,

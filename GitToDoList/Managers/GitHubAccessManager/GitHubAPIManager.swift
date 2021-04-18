@@ -26,7 +26,6 @@ struct GitHubAPIManager {
             URLQueryItem(name: "client_id", value: GitHubClientManager.clientID),
             URLQueryItem(name: "scope", value: scope)
         ]
-        print("url = \(components.url!.absoluteString)")
         if let url = URL(string: components.url!.absoluteString), UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url)
             // redirect to scene(_:openURLContexts:) if user authorized
@@ -38,7 +37,6 @@ struct GitHubAPIManager {
             .request(.login(code: code))
             .filterSuccessfulStatusAndRedirectCodes() // we tell it to only complete the call if the operation is successful, otherwise it will give us an error
             .map(AccessToken.self)
-            .debug()
             .asObservable()
     }
 }
