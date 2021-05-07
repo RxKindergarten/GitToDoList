@@ -46,10 +46,29 @@ extension LoginVC {
     }
     
     private func setNotificationCenter() {
-        /// 화면 전환 담당
+        // 화면 전환 담당
         NotificationCenter.default.rx.notification(Notification.Name.passToken)
             .subscribe(onNext: { _ in
-                print("화면전환")
+                
+                guard let window = self.view.window else { return }
+                
+                guard let tab = UIStoryboard.init(name: "Tab", bundle: nil)
+                        .instantiateViewController(identifier: "TabVC") as? TabVC else { return }
+                
+                window.rootViewController = tab
+                
+                let options: UIView.AnimationOptions = .transitionCrossDissolve
+                let duration: TimeInterval = 0.3
+
+                UIView.transition(
+                    with: window,
+                    duration: duration,
+                    options: options,
+                    animations: {},
+                    completion:nil
+                )
+
+                
             })
             .disposed(by: disposeBag)
     }
