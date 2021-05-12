@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--RepoVC-->
+        <!--Repository Issues-->
         <scene sceneID="nwP-Nr-mtG">
             <objects>
                 <viewController storyboardIdentifier="RepoVC" id="zMZ-0y-LH4" customClass="RepoVC" customModule="GitToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,21 +16,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Repo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5p-3L-WH2">
-                                <rect key="frame" x="130" y="379" width="40" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5AC-aZ-BJd">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RepoTitleTVC" rowHeight="119" id="gC5-36-Koe" customClass="RepoTitleTVC" customModule="GitToDoList" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="119"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gC5-36-Koe" id="J4L-9Q-51d">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W4x-5M-oSs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5AC-aZ-BJd" firstAttribute="leading" secondItem="W4x-5M-oSs" secondAttribute="leading" id="2t2-bh-yiP"/>
+                            <constraint firstItem="W4x-5M-oSs" firstAttribute="bottom" secondItem="5AC-aZ-BJd" secondAttribute="bottom" id="BgY-5x-6JJ"/>
+                            <constraint firstItem="5AC-aZ-BJd" firstAttribute="top" secondItem="W4x-5M-oSs" secondAttribute="top" id="DK4-3n-6gQ"/>
+                            <constraint firstItem="W4x-5M-oSs" firstAttribute="trailing" secondItem="5AC-aZ-BJd" secondAttribute="trailing" id="eiA-XH-Wud"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Repository Issues" id="lYB-7m-dwO"/>
+                    <connections>
+                        <outlet property="repoTableView" destination="5AC-aZ-BJd" id="WsX-uA-mda"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tXx-vj-n5w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="186"/>
+            <point key="canvasLocation" x="1066.6666666666667" y="185.49107142857142"/>
+        </scene>
+        <!--RepoNVC-->
+        <scene sceneID="0Cs-Ax-WVx">
+            <objects>
+                <navigationController storyboardIdentifier="RepoNVC" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="MBY-ZZ-Pgo" customClass="RepoNVC" customModule="GitToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="36K-nu-0B8">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zMZ-0y-LH4" kind="relationship" relationship="rootViewController" id="JvZ-Xf-tjj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzE-qY-heM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.97101449275362" y="185.49107142857142"/>
         </scene>
     </scenes>
     <resources>

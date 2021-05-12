@@ -37,6 +37,8 @@
 		D4997149262ACD52002CDE7F /* Issue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4997148262ACD52002CDE7F /* Issue.storyboard */; };
 		D499714E262ACD62002CDE7F /* Repo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D499714D262ACD62002CDE7F /* Repo.storyboard */; };
 		D4997151262ACD71002CDE7F /* RepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4997150262ACD71002CDE7F /* RepoVC.swift */; };
+		D4C55B7B264BF56A00FA469E /* RepoNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C55B7A264BF56A00FA469E /* RepoNVC.swift */; };
+		D4C55B7D264BFB9400FA469E /* RepoTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C55B7C264BFB9400FA469E /* RepoTitleTVC.swift */; };
 		D71348CA6E7FE49309787567 /* Pods_GitToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +77,8 @@
 		D4997148262ACD52002CDE7F /* Issue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Issue.storyboard; sourceTree = "<group>"; };
 		D499714D262ACD62002CDE7F /* Repo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repo.storyboard; sourceTree = "<group>"; };
 		D4997150262ACD71002CDE7F /* RepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoVC.swift; sourceTree = "<group>"; };
+		D4C55B7A264BF56A00FA469E /* RepoNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoNVC.swift; sourceTree = "<group>"; };
+		D4C55B7C264BFB9400FA469E /* RepoTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTitleTVC.swift; sourceTree = "<group>"; };
 		F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -277,6 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				D499714D262ACD62002CDE7F /* Repo.storyboard */,
+				D4C55B7C264BFB9400FA469E /* RepoTitleTVC.swift */,
+				D4C55B7A264BF56A00FA469E /* RepoNVC.swift */,
 				D4997150262ACD71002CDE7F /* RepoVC.swift */,
 			);
 			path = Repo;
@@ -441,6 +447,7 @@
 				9E5FD68B26050D3E008EB927 /* LoginVM.swift in Sources */,
 				9E5FD68426050772008EB927 /* GitHubClientManager.swift in Sources */,
 				9E5FD6A12605F0D6008EB927 /* ViewModelType.swift in Sources */,
+				D4C55B7D264BFB9400FA469E /* RepoTitleTVC.swift in Sources */,
 				D4791C92262BFA1600F0C8EF /* Notification+Extension.swift in Sources */,
 				9E5FD63726020E59008EB927 /* AppDelegate.swift in Sources */,
 				9E24C9BF26216FFD0097D741 /* NotificationCenterProtocol.swift in Sources */,
@@ -451,6 +458,7 @@
 				9E7E0FB3261856020006A9E2 /* GitHubAPIManager.swift in Sources */,
 				D4997151262ACD71002CDE7F /* RepoVC.swift in Sources */,
 				D4997146262ACD49002CDE7F /* IssueVC.swift in Sources */,
+				D4C55B7B264BF56A00FA469E /* RepoNVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
