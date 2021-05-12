@@ -29,9 +29,6 @@
                                     <constraint firstAttribute="height" constant="50" id="Ak1-RY-ILx"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="loginButtonDidTap:" destination="se4-OY-YjR" eventType="touchUpInside" id="kK2-2d-tOq"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TqI-Lg-B90"/>

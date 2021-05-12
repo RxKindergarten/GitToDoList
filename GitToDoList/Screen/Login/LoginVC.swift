@@ -13,22 +13,28 @@ class LoginVC: UIViewController {
     // MARK: - Variables
     private let loginViewModel = LoginViewModel()
     private let disposeBag = DisposeBag()
+    
     // MARK: - IBOutlet
     @IBOutlet var githubLogoImage: UIImageView!
     @IBOutlet var loginButton: UIButton!
-    // MARK: - IBAction // 주혁님의 조언: rxTap 으로 바꿔보자!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    @IBAction func loginButtonDidTap(_ sender: Any) {
-        GitHubAPIManager.shared.getCode()
-    }
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        layout()
+        
+        loginButton.rx.tap
+            .bind {
+                GitHubAPIManager.shared.getCode()
+            }
+            .disposed(by: disposeBag)
         setNotificationCenter()
+        layout()
     }
 }
-    // MARK: - functions
+
+// MARK: - functions
 extension LoginVC {
+    
     // MARK: - layout 설정
     private func layout() {
         view.backgroundColor = .white
@@ -38,12 +44,32 @@ extension LoginVC {
         loginButton.setTitle("Login with Github!", for: .normal)
         loginButton.tintColor = .black
     }
-    // MARK: - notification observer 추가
+    
     private func setNotificationCenter() {
-        ApplicationNotificationCenter.tokenHasReceived.addObserver().bind { object in
-            guard let code = object as? String else { return }
-            print("code: \(code)")
-            self.loginViewModel.login(with: code)
-        }.disposed(by: self.disposeBag)
+        // 화면 전환 담당
+        NotificationCenter.default.rx.notification(Notification.Name.passToken)
+            .subscribe(onNext: { _ in
+                
+                guard let window = self.view.window else { return }
+                
+                guard let tab = UIStoryboard.init(name: "Tab", bundle: nil)
+                        .instantiateViewController(identifier: "TabVC") as? TabVC else { return }
+                
+                window.rootViewController = tab
+                
+                let options: UIView.AnimationOptions = .transitionCrossDissolve
+                let duration: TimeInterval = 0.3
+
+                UIView.transition(
+                    with: window,
+                    duration: duration,
+                    options: options,
+                    animations: {},
+                    completion:nil
+                )
+
+                
+            })
+            .disposed(by: disposeBag)
     }
 }

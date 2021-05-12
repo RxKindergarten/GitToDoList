@@ -35,7 +35,6 @@ extension GitHubAPIService: TargetType {
     var task: Task {
         switch self {
         case .login(let code):
-            print("code from api service : \(code)")
             let params: [String: Any] = [
                 "client_id": GitHubClientManager.clientID,
                 "client_secret": GitHubClientManager.clientSecret,

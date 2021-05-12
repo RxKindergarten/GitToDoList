@@ -11,14 +11,14 @@ import UIKit
 enum ApplicationNotificationCenter: NotificationCenterProtocol {
     case willEnterForeground
     case didReceiveMemoryWarning
-    case tokenHasReceived
+    case codeHasReceived
     var name: Notification.Name {
         switch self {
         case .willEnterForeground:
             return UIApplication.willEnterForegroundNotification
         case .didReceiveMemoryWarning:
             return UIApplication.didReceiveMemoryWarningNotification
-        case .tokenHasReceived:
+        case .codeHasReceived:
             return Notification.Name("ApplicationNotificationCenter.tokenHasReceived")
         }
     }

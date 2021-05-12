@@ -11,15 +11,39 @@ import RxSwift
 import KeychainSwift
 
 class LoginViewModel {
+    
     // MARK: - Variables
     let disposeBag = DisposeBag()
-    // MARK: - Input
-    func login(with code: String) {
-        GitHubAPIManager.shared.login(with: code).subscribe(onNext: { accessToken in
-            print("saving accessToken ...")
-            KeychainSwift().set(accessToken.accessToken, forKey: "accessToken")
-            print("getting accessToken from keychain...")
-            print(KeychainSwift().get("accessToken")!)
-        }).disposed(by: disposeBag)
+    
+    // MARK: - input
+    
+    // MARK: - Output
+    
+    init() {
+        /// Get Token from SceneDelegate
+        ApplicationNotificationCenter.codeHasReceived
+            .addObserver()
+            .bind { object in
+                guard let code = object as? String else { return }
+                self.login(with: code)
+            }
+            .disposed(by: self.disposeBag)
     }
+    
+ 
+    /// Get Token from Github
+    func login(with code: String) {
+        GitHubAPIManager.shared.login(with: code)
+            .subscribe(
+                onNext: { accessToken in
+                    KeychainSwift().set(accessToken.accessToken, forKey: "accessToken")
+                    let token = KeychainSwift().get("accessToken")!
+                    print(token)
+                    NotificationCenter.default
+                        .post(name: Notification.Name.passToken, object: nil)
+                })
+            .disposed(by: disposeBag)
+    }
+    
+    
 }
