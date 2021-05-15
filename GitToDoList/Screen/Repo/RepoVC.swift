@@ -5,7 +5,39 @@
 //  Created by 이재용 on 2021/04/17.
 //
 
+import RxCocoa
+import RxSwift
 import UIKit
+
+class RepoVC: UIViewController {
+    
+    let viewModel = RepoViewModel()
+    let disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+            
+        viewModel.issueSubject
+            .observeOn(MainScheduler.instance)
+            .bind(to: repoTableView.rx.items(cellIdentifier: IssueTVC.identifier, cellType: IssueTVC.self)) { _, item, cell in
+
+                cell.titleLabel.text = item.title
+                cell.subTitleLabel.text = item.subTitle
+                cell.labelLabel.text = item.label
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.issueCount
+            .map { "\($0)"}
+            .observeOn(MainScheduler.instance)
+            .bind(to: issueCountLabel.rx.text)
+            .disposed(by: disposeBag)
+    }
+    
+    @IBOutlet weak var repoTableView: UITableView!
+    @IBOutlet weak var issueCountLabel: UILabel!
+    
+}
 
 struct Issue {
     var title: String
@@ -16,42 +48,4 @@ struct Issue {
 enum CellType {
     case header
     case issue
-}
-class RepoVC: UIViewController {
-    
-    var issues: [Issue] = [
-        Issue(title: "[Repo] 레포별 이슈리스트 UI 구성", subTitle: "#5 opened 1 hour ago by wody27", label: "재용"),
-        Issue(title: "[Repo] 레포별 이슈리스트 UI 구성", subTitle: "#5 opened 1 hour ago by wody27", label: "재용"),
-        Issue(title: "[Repo] 레포별 이슈리스트 UI 구성", subTitle: "#5 opened 1 hour ago by wody27", label: "재용"),
-        Issue(title: "[Repo] 레포별 이슈리스트 UI 구성", subTitle: "#5 opened 1 hour ago by wody27", label: "재용")
-    ]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        repoTableView.delegate = self
-        repoTableView.dataSource = self
-        repoTableView.rowHeight = UITableView.automaticDimension
-        repoTableView.estimatedRowHeight = 44.0
-    }
-    
-    @IBOutlet weak var repoTableView: UITableView!
-    
-}
-
-extension RepoVC: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return issues.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: IssueTVC.identifier) as? IssueTVC else { return UITableViewCell() }
-        
-        cell.titleLabel.text = issues[indexPath.row].title
-        cell.subTitleLabel.text = issues[indexPath.row].subTitle
-        cell.labelLabel.text = issues[indexPath.row].label
-        return cell
-    }
-    
-    
 }

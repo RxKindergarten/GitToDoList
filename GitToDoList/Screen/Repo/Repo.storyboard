@@ -21,10 +21,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IssueTVC" id="thy-zU-tqO" customClass="IssueTVC" customModule="GitToDoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="81"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="80.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="thy-zU-tqO" id="49U-jg-2tJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-Lv-iKh">
@@ -43,7 +43,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkW-c6-N1h">
-                                                    <rect key="frame" x="20" y="60.5" width="31" height="15.5"/>
+                                                    <rect key="frame" x="20" y="60.5" width="31" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -79,15 +79,23 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rH5-R3-pfV">
+                                <rect key="frame" x="376" y="92.5" width="18" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W4x-5M-oSs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5AC-aZ-BJd" firstAttribute="leading" secondItem="W4x-5M-oSs" secondAttribute="leading" id="2t2-bh-yiP"/>
+                            <constraint firstItem="W4x-5M-oSs" firstAttribute="trailing" secondItem="rH5-R3-pfV" secondAttribute="trailing" constant="20" id="7jg-et-lDJ"/>
                             <constraint firstItem="W4x-5M-oSs" firstAttribute="bottom" secondItem="5AC-aZ-BJd" secondAttribute="bottom" id="BgY-5x-6JJ"/>
                             <constraint firstItem="MJp-rm-hPf" firstAttribute="leading" secondItem="W4x-5M-oSs" secondAttribute="leading" constant="20" id="H4h-wn-zpY"/>
                             <constraint firstItem="MJp-rm-hPf" firstAttribute="top" secondItem="W4x-5M-oSs" secondAttribute="top" constant="10" id="Iyc-DI-MIP"/>
                             <constraint firstItem="uqX-5e-VDX" firstAttribute="leading" secondItem="W4x-5M-oSs" secondAttribute="leading" constant="20" id="Oaa-Hs-WWk"/>
+                            <constraint firstItem="rH5-R3-pfV" firstAttribute="firstBaseline" secondItem="uqX-5e-VDX" secondAttribute="firstBaseline" id="QJF-QT-OyF"/>
                             <constraint firstItem="W4x-5M-oSs" firstAttribute="trailing" secondItem="5AC-aZ-BJd" secondAttribute="trailing" id="eiA-XH-Wud"/>
                             <constraint firstItem="uqX-5e-VDX" firstAttribute="top" secondItem="MJp-rm-hPf" secondAttribute="bottom" constant="10" id="hfJ-QJ-lLd"/>
                             <constraint firstItem="5AC-aZ-BJd" firstAttribute="top" secondItem="uqX-5e-VDX" secondAttribute="bottom" constant="10" id="zda-MD-RAx"/>
@@ -95,6 +103,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Repository Issues" id="lYB-7m-dwO"/>
                     <connections>
+                        <outlet property="issueCountLabel" destination="rH5-R3-pfV" id="Ubu-pc-mmf"/>
                         <outlet property="repoTableView" destination="5AC-aZ-BJd" id="WsX-uA-mda"/>
                     </connections>
                 </viewController>
