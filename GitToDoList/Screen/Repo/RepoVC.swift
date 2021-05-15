@@ -16,29 +16,18 @@ class RepoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        TestAPIService.fetchAllIssues { result in
-            switch result {
-            case .success(let data):
-                break
-            case .failure(let err):
-                print(err)
-                break
-            }
-        }
-        
+       
         viewModel.issueSubject
             .observeOn(MainScheduler.instance)
             .bind(to: repoTableView.rx.items(cellIdentifier: IssueTVC.identifier, cellType: IssueTVC.self)) { _, item, cell in
-
                 cell.titleLabel.text = item.title
-                cell.subTitleLabel.text = item.subTitle
-                cell.labelLabel.text = item.label
-                cell.isOpenSwitch.isOn = item.isOpen
-                cell.index = item.index
+                cell.subTitleLabel.text = "#\(item.number) opened 1 hour ago"
+                cell.labelLabel.text = "임시 labels"
+                cell.isOpenSwitch.isOn = item.state == "open" ? true : false
+                cell.index = item.id
                 
-                cell.onChange = { [weak self] ind in
-                    self?.viewModel.changeState(index: ind)
+                cell.onChange = { [weak self] i in
+                    self?.viewModel.changeState(index: i)
                 }
             }
             .disposed(by: disposeBag)

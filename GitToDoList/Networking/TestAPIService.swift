@@ -11,7 +11,7 @@ import KeychainSwift
 
 let issueURL = "https://api.github.com/user/issues"
 class TestAPIService {
-    static func fetchAllIssues(completion: @escaping (Result<Data, Error>) -> Void) {
+    static func getAllIssues(completion: @escaping (Result<Data, Error>) -> Void) {
         let urlComponents = URLComponents(string: issueURL)!
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "GET"
@@ -29,14 +29,22 @@ class TestAPIService {
                                             userInfo: nil)))
                 return
             }
-            
-            
             completion(.success(data))
         }.resume()
     }
     
-    func jsonParsing(_ data: Data) {
-        let parser: JSONEncoder
-        
+    static func getAllIssuesRx() -> Observable<Data> {
+        return Observable.create { emitter in
+            getAllIssues { result in
+                switch result {
+                case .success(let data):
+                    emitter.onNext(data)
+                    emitter.onCompleted()
+                case .failure(let err):
+                    emitter.onError(err)
+                }
+            }
+            return Disposables.create()
+        }
     }
 }

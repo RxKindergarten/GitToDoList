@@ -11,17 +11,20 @@ struct IssueInfo: Codable {
     let id: Int
     let title: String
     let labels: [Label]
+    let number: Int
     var state: String
     let repository: Repository
     let assignee: Assignee
+    let createdAt: String
     
     enum CodingKeys: String, CodingKey {
-        case id
+        case id, number
         case title
         case labels
         case state
         case repository
         case assignee
+        case createdAt = "created_at"
     }
 }
 
