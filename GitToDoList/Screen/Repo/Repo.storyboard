@@ -21,10 +21,10 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IssueTVC" id="thy-zU-tqO" customClass="IssueTVC" customModule="GitToDoList" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="80.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="thy-zU-tqO" id="49U-jg-2tJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="81"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-Lv-iKh">
@@ -43,23 +43,32 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkW-c6-N1h">
-                                                    <rect key="frame" x="20" y="60.5" width="31" height="15"/>
+                                                    <rect key="frame" x="20" y="60.5" width="31" height="15.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WiE-E1-88q">
+                                                    <rect key="frame" x="345" y="25" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="changeState:" destination="thy-zU-tqO" eventType="valueChanged" id="eIb-rx-gn9"/>
+                                                    </connections>
+                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qkW-c6-N1h" firstAttribute="top" secondItem="RIN-vU-vcO" secondAttribute="bottom" constant="10" id="80y-xy-0ZB"/>
                                                 <constraint firstItem="TnS-Lv-iKh" firstAttribute="leading" secondItem="49U-jg-2tJ" secondAttribute="leadingMargin" id="DaQ-aU-MTf"/>
                                                 <constraint firstItem="RIN-vU-vcO" firstAttribute="top" secondItem="TnS-Lv-iKh" secondAttribute="bottom" constant="10" id="FFF-m6-mCh"/>
                                                 <constraint firstItem="TnS-Lv-iKh" firstAttribute="top" secondItem="49U-jg-2tJ" secondAttribute="top" constant="5" id="LwE-FD-WO0"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="WiE-E1-88q" secondAttribute="trailing" id="Ox3-Ba-PHO"/>
                                                 <constraint firstItem="RIN-vU-vcO" firstAttribute="leading" secondItem="49U-jg-2tJ" secondAttribute="leadingMargin" id="VE8-YK-27Y"/>
                                                 <constraint firstItem="qkW-c6-N1h" firstAttribute="leading" secondItem="49U-jg-2tJ" secondAttribute="leadingMargin" id="cPX-1K-9Mr"/>
                                                 <constraint firstAttribute="bottom" secondItem="qkW-c6-N1h" secondAttribute="bottom" constant="5" id="gFY-xs-Iep"/>
+                                                <constraint firstItem="WiE-E1-88q" firstAttribute="centerY" secondItem="49U-jg-2tJ" secondAttribute="centerY" id="oo6-Dp-ob2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="isOpenSwitch" destination="WiE-E1-88q" id="GJt-03-9Qu"/>
                                             <outlet property="labelLabel" destination="RIN-vU-vcO" id="Ebv-MB-oYJ"/>
                                             <outlet property="subTitleLabel" destination="qkW-c6-N1h" id="zXg-vz-qKb"/>
                                             <outlet property="titleLabel" destination="TnS-Lv-iKh" id="i8d-vv-TQz"/>
@@ -85,6 +94,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVU-M2-Mvu">
+                                <rect key="frame" x="277" y="54" width="61" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="check all"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W4x-5M-oSs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,6 +117,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Repository Issues" id="lYB-7m-dwO"/>
                     <connections>
+                        <outlet property="checkAllButton" destination="CVU-M2-Mvu" id="gBR-Py-Yq7"/>
                         <outlet property="issueCountLabel" destination="rH5-R3-pfV" id="Ubu-pc-mmf"/>
                         <outlet property="repoTableView" destination="5AC-aZ-BJd" id="WsX-uA-mda"/>
                     </connections>

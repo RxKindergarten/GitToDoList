@@ -24,6 +24,12 @@ class RepoVC: UIViewController {
                 cell.titleLabel.text = item.title
                 cell.subTitleLabel.text = item.subTitle
                 cell.labelLabel.text = item.label
+                cell.isOpenSwitch.isOn = item.isOpen
+                cell.index = item.index
+                
+                cell.onChange = { [weak self] ind in
+                    self?.viewModel.changeState(index: ind)
+                }
             }
             .disposed(by: disposeBag)
         
@@ -32,17 +38,26 @@ class RepoVC: UIViewController {
             .observeOn(MainScheduler.instance)
             .bind(to: issueCountLabel.rx.text)
             .disposed(by: disposeBag)
+        
+        checkAllButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.checkAll()
+            })
+            .disposed(by: disposeBag)
     }
     
     @IBOutlet weak var repoTableView: UITableView!
     @IBOutlet weak var issueCountLabel: UILabel!
-    
+    @IBOutlet weak var checkAllButton: UIButton!
+  
 }
 
 struct Issue {
+    var index: Int
     var title: String
     var subTitle: String
     var label: String
+    var isOpen: Bool
 }
 
 enum CellType {
