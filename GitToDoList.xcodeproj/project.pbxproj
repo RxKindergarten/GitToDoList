@@ -30,6 +30,8 @@
 		9E7E0FA7261849AF0006A9E2 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7E0FA6261849AF0006A9E2 /* AccessToken.swift */; };
 		9E7E0FB3261856020006A9E2 /* GitHubAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E7E0FB2261856020006A9E2 /* GitHubAPIManager.swift */; };
 		D444B57B264F6F6D0016850F /* RepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D444B57A264F6F6D0016850F /* RepoViewModel.swift */; };
+		D444B57D264F9C410016850F /* TestAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D444B57C264F9C410016850F /* TestAPIService.swift */; };
+		D444B57F264FB0C60016850F /* IssueInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D444B57E264FB0C60016850F /* IssueInfo.swift */; };
 		D4791C92262BFA1600F0C8EF /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4791C91262BFA1600F0C8EF /* Notification+Extension.swift */; };
 		D48F037F26021AD30047C172 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = D48F037E26021AD30047C172 /* .swiftlint.yml */; };
 		D4997140262AC86B002CDE7F /* Tab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D499713F262AC86B002CDE7F /* Tab.storyboard */; };
@@ -71,6 +73,8 @@
 		9E7E0FA6261849AF0006A9E2 /* AccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		9E7E0FB2261856020006A9E2 /* GitHubAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIManager.swift; sourceTree = "<group>"; };
 		D444B57A264F6F6D0016850F /* RepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewModel.swift; sourceTree = "<group>"; };
+		D444B57C264F9C410016850F /* TestAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAPIService.swift; sourceTree = "<group>"; };
+		D444B57E264FB0C60016850F /* IssueInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueInfo.swift; sourceTree = "<group>"; };
 		D4791C91262BFA1600F0C8EF /* Notification+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Extension.swift"; sourceTree = "<group>"; };
 		D48F037E26021AD30047C172 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		D499713F262AC86B002CDE7F /* Tab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tab.storyboard; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				9E5FD6A32605F3E0008EB927 /* GitHubAPIService.swift */,
+				D444B57C264F9C410016850F /* TestAPIService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				9E7E0FA6261849AF0006A9E2 /* AccessToken.swift */,
+				D444B57E264FB0C60016850F /* IssueInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -449,6 +455,7 @@
 				9E24C9C2262170E80097D741 /* ApplicationNotificationCenter.swift in Sources */,
 				9E5FD6802605070E008EB927 /* AppInfoKey.swift in Sources */,
 				9E5FD68B26050D3E008EB927 /* LoginVM.swift in Sources */,
+				D444B57D264F9C410016850F /* TestAPIService.swift in Sources */,
 				9E5FD68426050772008EB927 /* GitHubClientManager.swift in Sources */,
 				9E5FD6A12605F0D6008EB927 /* ViewModelType.swift in Sources */,
 				D4791C92262BFA1600F0C8EF /* Notification+Extension.swift in Sources */,
@@ -459,6 +466,7 @@
 				9E5FD6A42605F3E1008EB927 /* GitHubAPIService.swift in Sources */,
 				9E5FD63926020E59008EB927 /* SceneDelegate.swift in Sources */,
 				9E7E0FA7261849AF0006A9E2 /* AccessToken.swift in Sources */,
+				D444B57F264FB0C60016850F /* IssueInfo.swift in Sources */,
 				9E7E0FB3261856020006A9E2 /* GitHubAPIManager.swift in Sources */,
 				D4997151262ACD71002CDE7F /* RepoVC.swift in Sources */,
 				D4997146262ACD49002CDE7F /* IssueVC.swift in Sources */,

@@ -17,6 +17,16 @@ class RepoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
+        TestAPIService.fetchAllIssues { result in
+            switch result {
+            case .success(let data):
+                break
+            case .failure(let err):
+                print(err)
+                break
+            }
+        }
+        
         viewModel.issueSubject
             .observeOn(MainScheduler.instance)
             .bind(to: repoTableView.rx.items(cellIdentifier: IssueTVC.identifier, cellType: IssueTVC.self)) { _, item, cell in
