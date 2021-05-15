@@ -38,7 +38,7 @@
 		D499714E262ACD62002CDE7F /* Repo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D499714D262ACD62002CDE7F /* Repo.storyboard */; };
 		D4997151262ACD71002CDE7F /* RepoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4997150262ACD71002CDE7F /* RepoVC.swift */; };
 		D4C55B7B264BF56A00FA469E /* RepoNVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C55B7A264BF56A00FA469E /* RepoNVC.swift */; };
-		D4C55B7D264BFB9400FA469E /* RepoTitleTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C55B7C264BFB9400FA469E /* RepoTitleTVC.swift */; };
+		D4C55B7F264C066600FA469E /* IssueTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C55B7E264C066600FA469E /* IssueTVC.swift */; };
 		D71348CA6E7FE49309787567 /* Pods_GitToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,7 +78,7 @@
 		D499714D262ACD62002CDE7F /* Repo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Repo.storyboard; sourceTree = "<group>"; };
 		D4997150262ACD71002CDE7F /* RepoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoVC.swift; sourceTree = "<group>"; };
 		D4C55B7A264BF56A00FA469E /* RepoNVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoNVC.swift; sourceTree = "<group>"; };
-		D4C55B7C264BFB9400FA469E /* RepoTitleTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTitleTVC.swift; sourceTree = "<group>"; };
+		D4C55B7E264C066600FA469E /* IssueTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTVC.swift; sourceTree = "<group>"; };
 		F133EBD46408EF03D7128B0B /* Pods_GitToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GitToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -116,6 +116,7 @@
 		9E5FD63526020E59008EB927 /* GitToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				9E5FD64B26020EC8008EB927 /* Support */,
 				9E5FD69F2605F0C3008EB927 /* Protocols */,
 				9E5FD67E26050702008EB927 /* Commons */,
 				9E5FD6782605065A008EB927 /* Managers */,
@@ -124,7 +125,6 @@
 				9E5FD69E26051721008EB927 /* Networking */,
 				9E5FD64F26020F2F008EB927 /* Extension */,
 				9E5FD64C26020ED7008EB927 /* Screen */,
-				9E5FD64B26020EC8008EB927 /* Support */,
 			);
 			path = GitToDoList;
 			sourceTree = "<group>";
@@ -281,9 +281,9 @@
 			isa = PBXGroup;
 			children = (
 				D499714D262ACD62002CDE7F /* Repo.storyboard */,
-				D4C55B7C264BFB9400FA469E /* RepoTitleTVC.swift */,
-				D4C55B7A264BF56A00FA469E /* RepoNVC.swift */,
 				D4997150262ACD71002CDE7F /* RepoVC.swift */,
+				D4C55B7E264C066600FA469E /* IssueTVC.swift */,
+				D4C55B7A264BF56A00FA469E /* RepoNVC.swift */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -447,10 +447,10 @@
 				9E5FD68B26050D3E008EB927 /* LoginVM.swift in Sources */,
 				9E5FD68426050772008EB927 /* GitHubClientManager.swift in Sources */,
 				9E5FD6A12605F0D6008EB927 /* ViewModelType.swift in Sources */,
-				D4C55B7D264BFB9400FA469E /* RepoTitleTVC.swift in Sources */,
 				D4791C92262BFA1600F0C8EF /* Notification+Extension.swift in Sources */,
 				9E5FD63726020E59008EB927 /* AppDelegate.swift in Sources */,
 				9E24C9BF26216FFD0097D741 /* NotificationCenterProtocol.swift in Sources */,
+				D4C55B7F264C066600FA469E /* IssueTVC.swift in Sources */,
 				9E5FD69126051176008EB927 /* UIView+Extension.swift in Sources */,
 				9E5FD6A42605F3E1008EB927 /* GitHubAPIService.swift in Sources */,
 				9E5FD63926020E59008EB927 /* SceneDelegate.swift in Sources */,
