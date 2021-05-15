@@ -26,13 +26,29 @@ struct IssueInfo: Codable {
 }
 
 struct Label: Codable {
+    let id: Int
+    let name, color: String
     
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name, color
+    }
 }
 
 struct Repository: Codable {
-    
+    let id: Int
+    let name: String
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+    }
 }
 
 struct Assignee: Codable {
-    
+    let id: Int
+    let avatarURL: String
+    enum CodingKeys: String, CodingKey {
+        case id
+        case avatarURL = "avatar_url"
+    }
 }
