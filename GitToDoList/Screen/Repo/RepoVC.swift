@@ -17,14 +17,23 @@ class RepoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        viewModel.issueSubject
+        viewModel.issueObservable
             .observeOn(MainScheduler.instance)
             .bind(to: repoTableView.rx.items(cellIdentifier: IssueTVC.identifier, cellType: IssueTVC.self)) { _, item, cell in
                 cell.titleLabel.text = item.title
                 cell.subTitleLabel.text = "#\(item.number) opened 1 hour ago"
-                cell.labelLabel.text = "임시 labels"
                 cell.isOpenSwitch.isOn = item.state == "open" ? true : false
                 cell.index = item.id
+                
+                cell.labelCollectionView.dataSource = nil
+                cell.labelCollectionView.delegate = nil
+                let labelObservable = BehaviorSubject<[Label]>(value: item.labels)
+                labelObservable.bind(to: cell.labelCollectionView.rx.items(cellIdentifier: LabelCVC.identifier, cellType: LabelCVC.self)) { _, it, c in
+                    c.labelLabel.text = it.name
+                    c.layer.cornerRadius = 10
+                    c.backgroundColor = UIColor.init(hex: it.color)
+                }
+                .disposed(by: self.disposeBag)
                 
                 cell.onChange = { [weak self] i in
                     self?.viewModel.changeState(index: i)
@@ -49,17 +58,4 @@ class RepoVC: UIViewController {
     @IBOutlet weak var issueCountLabel: UILabel!
     @IBOutlet weak var checkAllButton: UIButton!
   
-}
-
-struct Issue {
-    var index: Int
-    var title: String
-    var subTitle: String
-    var label: String
-    var isOpen: Bool
-}
-
-enum CellType {
-    case header
-    case issue
 }

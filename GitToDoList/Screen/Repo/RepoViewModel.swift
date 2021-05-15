@@ -10,9 +10,9 @@ import Foundation
 
 class RepoViewModel {
     
-    var issueSubject = BehaviorSubject<[IssueInfo]>(value: [])
-    lazy var issueCount = issueSubject.map { $0.count }
-
+    var issueObservable = BehaviorSubject<[IssueInfo]>(value: [])
+    lazy var issueCount = issueObservable.map { $0.count }
+    
     init() {
         // 서버에서 이슈리스트 받아오는 코드
         _ = TestAPIService.getAllIssuesRx()
@@ -27,7 +27,7 @@ class RepoViewModel {
             .take(1)
             .subscribe(onNext: { data in
                 // 미리 만들어둔 Observable에 데이터 update
-                self.issueSubject.onNext(data)
+                self.issueObservable.onNext(data)
             })
         
     }
@@ -46,7 +46,7 @@ class RepoViewModel {
     }
     
     func changeState(index: Int) {
-        _ = issueSubject
+        _ = issueObservable
             .observeOn(MainScheduler.asyncInstance)
             .map { issue in
                 return issue.map { i in
@@ -81,7 +81,7 @@ class RepoViewModel {
             }
             .take(1)
             .subscribe(onNext: {
-                self.issueSubject.onNext($0)
+                self.issueObservable.onNext($0)
             })
     }
 }
