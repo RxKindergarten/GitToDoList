@@ -6,10 +6,10 @@
 //
 
 import UIKit
+import RxSwift
 
 class LabelCVC: UICollectionViewCell {
     static let identifier: String = "LabelCVC"
-    
     
     // MARK: - IB
     @IBOutlet weak var labelLabel: UILabel!

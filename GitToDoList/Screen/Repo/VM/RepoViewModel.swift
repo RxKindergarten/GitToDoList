@@ -10,21 +10,23 @@ import Foundation
 
 class RepoViewModel {
     
+    // 전체 이슈들
     var issueObservable = BehaviorSubject<[IssueInfo]>(value: [])
+    
+    // 이슈 개수
     lazy var issueCount = issueObservable.map { $0.count }
     
     init() {
-        // 서버에서 이슈리스트 받아오는 코드
+        // 서버에서 이슈 받아오는 코드
         _ = TestAPIService.getAllIssuesRx()
-            .map { data -> [IssueInfo] in
+            .map { (data) -> [IssueInfo] in
+                print(data)
                 guard let response = try? JSONDecoder().decode([IssueInfo].self, from: data) else {
                     print("Decode Error! ㅠㅠ")
                     return []
                 }
                 return response
-                
             }
-            .take(1)
             .subscribe(onNext: { data in
                 // 미리 만들어둔 Observable에 데이터 update
                 self.issueObservable.onNext(data)
@@ -33,16 +35,41 @@ class RepoViewModel {
     }
     
     func checkAll() {
-//        _ = issueSubject.map { issue in
-//            return issue.map { i in
-//                if i.state ==
-//                return IssueInfo(id: i.id, title: i.title, labels: i.labels, number: i.number, state: i.state, repository: <#T##Repository#>, assignee: <#T##Assignee#>, createdAt: <#T##String#>)
-//            }
-//        }
-//        .take(1)
-//        .subscribe(onNext: {
-//            self.issueSubject.onNext($0)
-//        })
+        _ = issueObservable
+            .map { issues in
+                var check: Bool = false
+                issues.forEach { i in
+                    if i.state == "close" {
+                        check = true
+                    }
+                }
+            return issues.map { i in
+                if check {
+                    return IssueInfo(id: i.id,
+                                     title: i.title,
+                                     labels: i.labels,
+                                     number: i.number,
+                                     state: "open",
+                                     repository: i.repository,
+                                     assignee: i.assignee,
+                                     createdAt: i.createdAt)
+                } else {
+                    return IssueInfo(id: i.id,
+                                     title: i.title,
+                                     labels: i.labels,
+                                     number: i.number,
+                                     state: "close",
+                                     repository: i.repository,
+                                     assignee: i.assignee,
+                                     createdAt: i.createdAt)
+                }
+                
+            }
+        }
+        .take(1)
+        .subscribe(onNext: {
+            self.issueObservable.onNext($0)
+        })
     }
     
     func changeState(index: Int) {

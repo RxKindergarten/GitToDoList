@@ -9,14 +9,22 @@ import Foundation
 import RxSwift
 import KeychainSwift
 
-let issueURL = "https://api.github.com/user/issues"
+let issueURL = "https://api.github.com/user/issues?"
+
 class TestAPIService {
+    
     static func getAllIssues(completion: @escaping (Result<Data, Error>) -> Void) {
-        let urlComponents = URLComponents(string: issueURL)!
+        var urlComponents = URLComponents(string: issueURL)!
+        let queryItem = URLQueryItem(name: "state", value: "all")
+        let queryItem2 = URLQueryItem(name: "filter", value: "all")
+        urlComponents.queryItems?.append(queryItem)
+        urlComponents.queryItems?.append(queryItem2)
+        print(urlComponents)
         var request = URLRequest(url: urlComponents.url!)
         request.httpMethod = "GET"
         let token = KeychainSwift().get("accessToken")!
         request.addValue("token \(token)", forHTTPHeaderField: "Authorization")
+  
         URLSession.shared.dataTask(with: request) { data, res, err in
             if let err = err {
                 completion(.failure(err))
@@ -31,6 +39,7 @@ class TestAPIService {
             }
             completion(.success(data))
         }.resume()
+        
     }
     
     static func getAllIssuesRx() -> Observable<Data> {

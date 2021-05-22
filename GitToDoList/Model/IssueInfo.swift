@@ -10,11 +10,11 @@ import Foundation
 struct IssueInfo: Codable {
     let id: Int
     let title: String
-    let labels: [Label]
+    let labels: [Label]?
     let number: Int
     var state: String
     let repository: Repository
-    let assignee: Assignee
+    let assignee: Assignee?
     let createdAt: String
     
     enum CodingKeys: String, CodingKey {
@@ -26,6 +26,7 @@ struct IssueInfo: Codable {
         case assignee
         case createdAt = "created_at"
     }
+
 }
 
 struct Label: Codable {

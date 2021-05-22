@@ -17,17 +17,22 @@ class RepoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        setUI()
+        
+        
         viewModel.issueObservable
             .observeOn(MainScheduler.instance)
             .bind(to: repoTableView.rx.items(cellIdentifier: IssueTVC.identifier, cellType: IssueTVC.self)) { _, item, cell in
                 cell.titleLabel.text = item.title
                 cell.subTitleLabel.text = "#\(item.number) opened 1 hour ago"
-                cell.isOpenSwitch.isOn = item.state == "open" ? true : false
+                cell.isOpenSwitch.isOn = item.state == "open" ? false : true
                 cell.index = item.id
                 
                 cell.labelCollectionView.dataSource = nil
                 cell.labelCollectionView.delegate = nil
-                let labelObservable = BehaviorSubject<[Label]>(value: item.labels)
+                
+                // labelCollectionView Datasource, Delegate
+                let labelObservable = BehaviorSubject<[Label]>(value: item.labels ?? [])
                 labelObservable.bind(to: cell.labelCollectionView.rx.items(cellIdentifier: LabelCVC.identifier, cellType: LabelCVC.self)) { _, it, c in
                     c.labelLabel.text = it.name
                     c.layer.cornerRadius = 10
@@ -57,5 +62,12 @@ class RepoVC: UIViewController {
     @IBOutlet weak var repoTableView: UITableView!
     @IBOutlet weak var issueCountLabel: UILabel!
     @IBOutlet weak var checkAllButton: UIButton!
-  
+    @IBOutlet weak var shadowView: UIView!
+    
+    // MARK: - private methods
+    private func setUI() {
+        shadowView.layer.shadowColor = UIColor.darkGray.cgColor
+        shadowView.layer.shadowRadius = 0.5
+        shadowView.layer.shadowOpacity = 4.0
+    }
 }

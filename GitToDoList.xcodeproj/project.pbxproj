@@ -291,13 +291,29 @@
 			isa = PBXGroup;
 			children = (
 				D499714D262ACD62002CDE7F /* Repo.storyboard */,
-				D4997150262ACD71002CDE7F /* RepoVC.swift */,
-				D444B57A264F6F6D0016850F /* RepoViewModel.swift */,
-				D4C55B7E264C066600FA469E /* IssueTVC.swift */,
-				D444B582264FC6820016850F /* LabelCVC.swift */,
-				D4C55B7A264BF56A00FA469E /* RepoNVC.swift */,
+				D4A7E346264FFDEC00D9DC3D /* VM */,
+				D4A7E347264FFDF700D9DC3D /* VC */,
 			);
 			path = Repo;
+			sourceTree = "<group>";
+		};
+		D4A7E346264FFDEC00D9DC3D /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				D444B57A264F6F6D0016850F /* RepoViewModel.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		D4A7E347264FFDF700D9DC3D /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				D4C55B7A264BF56A00FA469E /* RepoNVC.swift */,
+				D4997150262ACD71002CDE7F /* RepoVC.swift */,
+				D4C55B7E264C066600FA469E /* IssueTVC.swift */,
+				D444B582264FC6820016850F /* LabelCVC.swift */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		E270A4B37A8CFA2B64E1AB8D /* Pods */ = {
